@@ -1,0 +1,131 @@
+{
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+    },
+    "javascript.validate.enable": true,
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "[rmd]": {
+        "editor.tabSize": 3
+    },
+    "emmet.includeLanguages": {
+        "html.erb": "html",
+        "django-html": "html"
+    },
+    "editor.detectIndentation": false,
+    "files.associations": {
+        "*.erb": "erb",
+        "django-html": "html",
+        "*.js": "javascriptreact",
+        "*.rmd": "markdown",
+        "*.Rmd": "rmd"
+    },
+    "editor.suggestSelection": "first",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "files.autoSave": "onFocusChange",
+    "diffEditor.wordWrap": "off",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "explorer.confirmDelete": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.profiles.windows": {
+        "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe (migrated)": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": []
+        }
+    },
+    "editor.wordWrapColumn": 160,
+    "eslint.format.enable": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.formatting.autopep8Args": [
+        "--max-line-length=200",
+        "--indent-size=2"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.eol": "\n",
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--ignore-missing-imports",
+        "--show-column-numbers",
+        "--no-pretty"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylintArgs": [
+        "--indent-string='  '",
+        "--disable=missing-function-docstring",
+        "--disable=missing-module-docstring",
+        "--disable=too-many-function-args",
+        "--disable=missing-class-docstring",
+        "--disable=line-too-long",
+        "--disable=wrong-import-order",
+        "--disable=invalid-name",
+        "--disable=import-error",
+        "--disable=no-member",
+        "--disable=anomalous-backslash-in-string",
+        "--disable=logging-fstring-interpolation",
+        "--disable=too-many-ancestors",
+        "--disable=unused-argument",
+        "--disable=too-many-instance-attributes",
+        "--disable=too-few-public-methods",
+        "--disable=dangerous-default-value",
+        "--disable=no-self-use",
+        "--disable=consider-using-with",
+        "--disable=super-with-arguments",
+        "--disable=bare-except",
+        "--disable=bad-classmethod-argument",
+        "--disable=singleton-comparison",
+        "--disable=too-many-arguments",
+        "--disable=ungrouped-imports",
+        "--disable=expression-not-assigned",
+        "--disable=broad-except",
+        "--disable=unused-variable",
+        "--disable=too-many-locals",
+        "--disable=attribute-defined-outside-init",
+        "--disable=pointless-string-statement",
+        "--disable=chained-comparison",
+        "--disable=redefined-outer-name",
+        "--disable=useless-super-delegation",
+        "--disable=cell-var-from-loop",
+        "--disable=abstract-method",
+        "--disable=assignment-from-no-return",
+        "--disable=import-outside-toplevel",
+        "--disable=unsubscriptable-object"
+    ],
+    "mypy.configFile": "mypy.ini",
+    "mypy.runUsingActiveInterpreter": true,
+    "cSpell.enabled": false
+}

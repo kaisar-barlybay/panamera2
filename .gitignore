@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# cluster
+.coverage
+*/.ipynb_checkpoints
+# /lab/*.csv
+# synchronize only notebooks
+!/lab/
+/selenium_downloads/*
+# /lab/*
+/lab/*.pdf
+/lab/*.txt
+/lab/*.html
+!/lab/*.ipynb
+reports/*
+
+
+
+
+
+/tests/outputs
+latex/*
+tars/*
+extracted/*
+
+/project/.env
+/docs/reports
+/project/logs/main.log
+/.mypy_cache
+/.pytest_cache
+/cluster/project/logs/main.log
+__pycache__
+*/env
+env
+.env
+db.sqlite3
+commands.txt
+worker-deploy.yaml
+/geckodriver.log
+*/geckodriver.log
