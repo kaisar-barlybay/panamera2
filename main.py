@@ -26,10 +26,14 @@ class Main(object):
     self.words: list[str] = []
     self.word_index: dict[str, int] = {}
 
-  def initialize(self, data_len: int, data: list[str]):
+  def initialize(self, data_len: int, data: list[str], load: bool = False):
     self.data_len = data_len
-    self.W = np.random.uniform(-0.8, 0.8, (self.data_len, self.N))
-    self.W1 = np.random.uniform(-0.8, 0.8, (self.N, self.data_len))
+    if load:
+      self.W = np.load('W.npy', allow_pickle=True)
+      self.W1 = np.load('W1.npy', allow_pickle=True)
+    else:
+      self.W = np.random.uniform(-0.8, 0.8, (self.data_len, self.N))
+      self.W1 = np.random.uniform(-0.8, 0.8, (self.N, self.data_len))
 
     self.words = data
     for i in range(len(data)):
@@ -129,8 +133,12 @@ class Main(object):
       data.append(x)
     return data
 
+  def save(self) -> None:
+    np.save('W.npy', self.W)
+    np.save('W1.npy', self.W1)
+
   # this function help us to take our data and train it, we divide words from sentences, sort, count
-  def train_test_split(self, sentences: list[list[str]]):
+  def train_test_split(self, sentences: list[list[str]], load: bool = False):
     data = {}
     for sentence in sentences:
       for word in sentence:
@@ -155,7 +163,7 @@ class Main(object):
             context[vocab[sentence[j]]] += 1
         self.x_train.append(center_word)
         self.y_train.append(context)
-    self.initialize(data_len, data2)
+    self.initialize(data_len, data2, load)
 
     return self.x_train, self.y_train
 
@@ -172,7 +180,9 @@ if __name__ == '__main__':
   # Shynar
   data = main.pre_process(corpus)
   # Arailym
-  main.train_test_split(data)
+  main.train_test_split(data, True)
+  # main.train_test_split(data)
   # Kaisar, Olzhas
   main.train()
+  main.save()
   print(main.predict("artificial", 3))
