@@ -65,14 +65,11 @@ class Main(object):
     self.W: ndarray = self.W - self.alpha*dLdW
 
   # in this function we train our data
-  # Kaisar
   def train(self):
     for epoch in range(1, self.epochs):
       self.loss = 0
       for j in range(len(self.x_train)):
-        # Olzhas
         self.propagate_forward(self.x_train[j])
-        # Olzhas
         self.propagate_backward(self.x_train[j], self.y_train[j])
         C = 0
         for m in range(self.data_len):
@@ -169,20 +166,26 @@ class Main(object):
 
 
 if __name__ == '__main__':
+  # config
+  routine = 'train'  # 'train' or 'predict'
+  word_to_predict = "artificial"
+  load = True
+
   try:
     nltk.data.find('stopwords')
   except Exception as e:
     nltk.download('stopwords')
 
   main = Main(epochs=100)
-  # Arailym
   corpus = main.get_corpus()
-  # Shynar
   data = main.pre_process(corpus)
-  # Arailym
-  main.train_test_split(data, True)
-  # main.train_test_split(data)
-  # Kaisar, Olzhas
-  main.train()
-  main.save()
-  print(main.predict("artificial", 3))
+  main.train_test_split(data, load)
+
+  match routine:
+    case 'train':
+      main.train()
+      main.save()
+    case 'predict':
+      print(f'{main.predict(word_to_predict, 3)}')
+    case _:
+      pass
